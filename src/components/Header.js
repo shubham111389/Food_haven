@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FoodFireLogo from "../images/logo1";
+import FoodHavenLogo from "../images/applogo.png";
 import { Link } from "react-router-dom"; // imported Link for client side routing
 import { useNavigate } from "react-router-dom";
 
@@ -8,9 +8,9 @@ const Title = () => (
   <a href="/">
     <img
       className="logo"
-      src={FoodFireLogo}
-      alt="Food Fire"
-      title="Food Fire"
+      src={FoodHavenLogo}
+      alt="Food Haven"
+      title="Food Haven"
     />
   </a>
 );
