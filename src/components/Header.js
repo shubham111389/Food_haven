@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FoodFireLogo from "../Images/Food Fire Logo.png";
+import FoodFireLogo from "../images/logo1";
 import { Link } from "react-router-dom"; // imported Link for client side routing
 import { useNavigate } from "react-router-dom";
 
