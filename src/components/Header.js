@@ -2,6 +2,8 @@ import { useState } from "react";
 import FoodHavenLogo from "../images/applogo.png";
 import { Link } from "react-router-dom"; // imported Link for client side routing
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 // Title component for display logo
 const Title = () => (
@@ -13,7 +15,7 @@ const Title = () => (
     </Link>
 
     <img
-      className= "w-52 m-2 p-3 "
+      className= "w-26  p-3 "
       alt="logo"
       src="https://cdn-icons-png.flaticon.com/512/683/683071.png"
     />
@@ -29,6 +31,8 @@ const Header = () => {
     token?.length === 100 ? true : false
   );
   const navigate = useNavigate();
+  const cartItems = useSelector((store) => store.cart.items);
+
 
   return (
     <div className="header">
@@ -48,6 +52,12 @@ const Header = () => {
           <li>
             <i className="fa-solid fa-cart-shopping"></i>
           </li>
+            <li className="px-2" data-testid="cart">
+             <Link to="/cart">
+               Cart- {cartItems.length} items
+              </Link>
+            </li>
+
           <li>
             {/* use conditional rendering for login and logout */}
             {isLoggedin ? (

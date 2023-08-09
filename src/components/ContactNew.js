@@ -1,6 +1,6 @@
 const contact1 =()=>{
     return (
-<div className="m-6 p-7 bg-white text-xl ">     
+<div className="text-stone-950  border-spacing-6 p-5 ">     
      Created By
       <i className="fa-solid fa-heart"></i>
       <a href="https://www.linkedin.com/in/shubham-annpurne-0183bb232/" target="_blank" title="Chetan Nada's Linkedin Profile">
