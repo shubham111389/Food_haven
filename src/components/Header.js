@@ -5,15 +5,21 @@ import { useNavigate } from "react-router-dom";
 
 // Title component for display logo
 const Title = () => (
-  <a href="/">
+  <div className="flex items-center">
+    <Link to="/">
+      <h2 className="text-xl font-bold text-gray-500 mx-2">
+        Food<span className="text-orange-600">Haven</span>
+      </h2>
+    </Link>
+
     <img
-      className="logo"
-      src={FoodHavenLogo}
-      alt="Food Haven"
-      title="Food Haven"
+      className= "w-52 m-2 p-3 "
+      alt="logo"
+      src="https://cdn-icons-png.flaticon.com/512/683/683071.png"
     />
-  </a>
+  </div>
 );
+
 
 // Header component for header section: Logo, Nav Items
 const Header = () => {
@@ -29,7 +35,7 @@ const Header = () => {
       <Title />
       <div className="nav-items">
         <ul>
-          <li>
+          <li className="px-6 text-medium font-semibold flex items-center text-gray-600 hover:text-orange-600">
             <Link to="/">Home</Link>
           </li>
           <li>

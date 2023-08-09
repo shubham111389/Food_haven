@@ -10,12 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "formik": "^2.4.3",
     "parcel": "^2.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modules": "^1.0.8",
+    "react-redux": "^8.1.2",
     "react-router-dom": "^6.14.2",
     "yup": "^1.2.0"
   },
