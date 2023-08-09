@@ -80,7 +80,7 @@ const Footer1 = () => {
           </ul>
         </div>
         <div className="flex flex-col gap-4">
-        <ContactNew/>
+        
         </div>
         <div className="flex flex-col gap-4">
           <img
@@ -94,10 +94,14 @@ const Footer1 = () => {
             src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl"
           />
         </div>
+        
      
         
       </div>
     </div>
+    <div className='px-4 m-5 text-xl'>
+        <ContactNew/>
+        </div>
    
     </>
     

@@ -11,6 +11,10 @@ import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import RestaurantMenu from "./Components/RestaurantMenu";
+//following import is used for the redux
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // for routing our page import createBrowserRouter and RouterProvider for providing router & Outlet for children component for nested routing
 
@@ -35,11 +39,11 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; 
 // AppLayout component to render: Header, Outlet(it contain children component like body, About, Restaurant Menu etc) and Footer Component
 const AppLayout = () => {
   return (
-    <React.Fragment>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </React.Fragment>
+      </Provider>
   );
 };
 
@@ -67,6 +71,10 @@ const appRouter = createBrowserRouter([
       {
         path: "restaurant/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
