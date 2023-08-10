@@ -43,29 +43,45 @@ const Body = () => {
 
   return (
     <>
-      <div className="search-container">
+       <div className="mx-8 ">
+       <div className="flex flex-col justify-between items-center md:flex md:flex-row">
+      <div className="text-sm flex gap-2 my-4">
         <input
           type="text"
-          className="search-input"
-          placeholder="Search a restaurant you want..."
+          placeholder="Search for a restaurants"
+          className="w-64 text-xs border border-gray-300 focus:border-gray-500 transition-all duration-300 px-2 py-2 outline-none  rounded"
           value={searchText}
-          // update the state variable searchText when we typing in input box
-          onChange={(e) => {
-            setSearchText(e.target.value);
-            // when user will enter the data, it automatically called searchData function so it work same as when you click on Search button
-            searchData(e.target.value, allRestaurants);
-          }}
-        ></input>
-        <button
-          className="search-btn"
-          onClick={() => {
-            // user click on button searchData function is called
-            searchData(searchText, allRestaurants);
-          }}
+          onChange={(e)=>{
+            setSearchText(e.target.value)
+            const fData = filterData(searchText,allRestaurants)
+           setFilteredRestaurents(fData)
+        }}
+        />
+        <button className="text-xs font-medium shadow-md px-2 py-2 outline-none  rounded bg-orange-500 hover:bg-orange-600 transition-all duration-200 ease-in-out text-white"
+        onClick={()=>{
+           const fData = filterData(searchText,allRestaurants)
+           console.log(fData)
+           setFilteredRestaurents(fData)
+        }}
         >
           Search
         </button>
       </div>
+        <div className="flex gap-12 cursor-pointer text-xs">
+            <div className="flex gap-4 items-center">
+            <img className="h-6" alt="illustration" src="https://b.zmtcdn.com/data/o2_assets/c0bb85d3a6347b2ec070a8db694588261616149578.png?output-format=webp" loading="lazy" />
+                <span className="">Delivery</span>
+            </div>
+            <div className="flex gap-4 items-center">
+            <img className="h-6" alt="illustration" src="https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png?output-format=webp" loading="lazy" />
+                <span className="whitespace-nowrap">Dining Out</span>
+            </div>
+            <div className="flex gap-4 items-center">
+            <img className="h-6" alt="illustration" src="https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png?output-format=webp" loading="lazy" />
+                <span className="">Nightlife</span>
+            </div>
+        </div>
+        </div>
       {errorMessage && <div className="error-container">{errorMessage}</div>}
 
       {/* if restaurants data are fetched then display restaurants cards otherwise display Shimmer UI */}
@@ -89,6 +105,7 @@ const Body = () => {
           )}
         </div>
       )}
+      </div>
     </>
   );
 };
