@@ -4,6 +4,7 @@ import { clearCart } from "../Utils/cartSlice";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems); 
 
   const dispatch = useDispatch();
 
@@ -13,15 +14,16 @@ const Cart = () => {
 
   return (
     <div>
-       { console.log( cartItems.cloudinaryImageId)};
-      <h1 className="font-bold text-3xl"> Cart Items - {cartItems.length}</h1>
+       
+      <h1 className="font-bold text-3xl px-4"> Cart Items - {cartItems.length}</h1>
       <button
-        className="bg-green-300 p-6 m-4"
+        className="bg-green-300 p-2 m-1 rounded-lg px-5"
         onClick={() => handleClearCart()}
       >
         Clear Cart
       </button>
       <div className="flex">
+       
         {cartItems.map((item) => (
           <FoodItem key={item.id} {...item} />
         ))}

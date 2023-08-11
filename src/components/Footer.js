@@ -1,13 +1,38 @@
 // Footer component for footer section
-import ContactNew from './ContactNew'
+
+
+
+import React from "react";
+ 
+const Contact1 = () => {
+  return (
+    
+    <div className="py-2 text-fuchsia-500 px-25   ">
+      Created By
+      <i className="fa-solid fa-heart cursor-pointer"></i>
+      <a
+        href="https://www.linkedin.com/in/shubham-annpurne-0183bb232/"
+        target="_blank"
+        title="Chetan Nada's Linkedin Profile"
+      >
+        Shubham Annpurne
+      </a>
+      <i className="fa-solid fa-copyright"></i>2023
+      <strong>
+        Food<span>Haven</span>
+      </strong>
+    </div>
+  );
+};
+
 
 const Footer1 = () => {
   
   return (
     <>
-  
-    <div className="relative top-16 flex flex-col justify-between border border-black md:flex md:flex-row  py-10 text-white bg-black">
-      <div className="flex flex-1 justify-around ">
+  <div className="grid md:grid-rows-2 ">
+  <div className="relative top-16 flex flex-col justify-between border border-black md:flex md:flex-row py-10 text-white bg-black ">
+      <div className="flex flex-1 justify-around">
         <div className="leftFooter1">
           <span className="opacity-50 font-medium">COMPANY</span>
           <ul className="mt-4 flex flex-col gap-2">
@@ -55,7 +80,7 @@ const Footer1 = () => {
           </ul>
         </div>
       </div>
-      <div className=" flex flex-1 justify-around md:mt-0 mt-10 ">
+      <div className="flex flex-1 justify-around md:mt-0 mt-10">
         <div className="hidden md:block rightFooter1">
           <span className="opacity-50 font-medium">LEGAL</span>
           <ul className="mt-4 flex flex-col gap-2">
@@ -79,9 +104,7 @@ const Footer1 = () => {
             </a>
           </ul>
         </div>
-        <div className="flex flex-col gap-4">
         
-        </div>
         <div className="flex flex-col gap-4">
           <img
           className="h-12 cursor-pointer"
@@ -98,10 +121,18 @@ const Footer1 = () => {
      
         
       </div>
+     
+
     </div>
-    <div className='px-4 m-5 text-xl'>
-        <ContactNew/>
-        </div>
+  
+    <Contact1/>
+    
+
+ 
+
+    </div>
+
+    
    
     </>
     

@@ -54,14 +54,16 @@ const Body = () => {
           onChange={(e)=>{
             setSearchText(e.target.value)
             const fData = filterData(searchText,allRestaurants)
-           setFilteredRestaurents(fData)
+      setFilteredRestaurants(fData);
+      (fData)
         }}
         />
         <button className="text-xs font-medium shadow-md px-2 py-2 outline-none  rounded bg-orange-500 hover:bg-orange-600 transition-all duration-200 ease-in-out text-white"
         onClick={()=>{
            const fData = filterData(searchText,allRestaurants)
            console.log(fData)
-           setFilteredRestaurents(fData)
+           setFilteredRestaurants(fData);
+           (fData)
         }}
         >
           Search

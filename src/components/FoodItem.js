@@ -11,44 +11,36 @@ import { IMG_CDN_URL } from "../contants";
   );
 };
 */
-const FoodItem  = ({
-  cloudinaryImageId,
-  name,
-  cuisines,
-  areaName,
-  sla,
-  costForTwo,
-  avgRatingString,
-}) => {
-  return (
-    <div className="card">
-      { console.log( cloudinaryImageId)};
-      <img src={IMG_CDN_URL + cloudinaryImageId} />
-      <h3>{name}</h3>
-      <h5>{cuisines}</h5>
-      <h5>{areaName}</h5>
-      <span>
+const FoodItem  = ({name,imageId,price,description,ratings})=>{
+  const rate=ratings?.aggregatedRating?.rating ;
+  return(
+<div className="card">       
+   <img
+                src={
+                 imageId ? (IMG_CDN_URL + imageId) : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/39cd5e4824e5c011ffaf56ddc39891e8"
+                }
+                alt=""
+                className="w-33 h-25 rounded object-cover"
+              />
+          
+          <h3 className="font-semibold">{name}</h3>
+          <span className="font-semibold">&#8377;{!price ? '250' : price/100}</span>
+          <h5 className="text-sm text-gray-600">{description}</h5>
+          <span>
         <h4
-          style={
-            avgRatingString < 4
-              ? { backgroundColor: "var(--light-red)" }
-              : avgRatingString === "--"
-                ? { backgroundColor: "white", color: "black" }
-                : { color: "white" }
-          }
-        >
+      
+          >
           <i className="fa-solid fa-star"></i>
-          {avgRatingString}
+          Rate : {rate} ⭐⭐⭐⭐
         </h4>
-        <h4>•</h4>
-        <h4>{sla?.lastMileTravelString ?? '2.0 km'}</h4>
-        <h4>•</h4>
-        <h4>{costForTwo ?? '₹200 for two'}</h4>
+        
+        <h4>{ '₹500 for two'}</h4>
       </span>
-     
-    </div>
-  );
+          
+      </div>
+  )
 };
+
 
 //export default RestaurantCard;
 
