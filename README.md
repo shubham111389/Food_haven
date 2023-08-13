@@ -16,7 +16,7 @@ Introducing "Food_Haven" 🍔🛍️ - Your ultimate online food destination! �
 
 [![Use this template](https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge)](https://github.com/shubham111389//Food_haven/generate)
 
-[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://shubham111389/.github.io/Food_haven/)
+[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://64d88c1f17608f7513f15861--lovely-zabaione-67b5e6.netlify.app/)
 
 </div>
 </div>
