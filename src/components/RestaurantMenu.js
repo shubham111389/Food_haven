@@ -101,7 +101,7 @@ const RestaurantMenu = () => {
                   )}
                   <button
                 data-testid="addBtn"
-                className="px-3 bg-green-200 m-2 text-lg"
+                className="px-3 bg-green-200 m-4 text-lg rounded-s-md shadow-lg border-lime-500"
                 onClick={() => addFoodItem(item)}
               >
                  Add +

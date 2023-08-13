@@ -78,12 +78,12 @@ const Footer1 = () => {
           </div>
           <div className="flex flex-col gap-4">
             <img
-            className="h-12 cursor-pointer"
+            className=" cursor-pointer"
               alt=""
               src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv"
             />
             <img
-            className="h-12 cursor-pointer"
+            className=" cursor-pointer"
               alt=""
               src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl"
             />

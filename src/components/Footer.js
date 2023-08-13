@@ -12,7 +12,7 @@ const Footer = () => {
       <div>
       <Footer1/>
       </div>
-    <div className=" bg-black mx-96 ">
+    <div className=" bg-black mx-96 justify-center">
      <div className=" bg-black text-white  ">
       <strong className="opacity-50">
            Created  By 

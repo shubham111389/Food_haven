@@ -15,9 +15,9 @@ const Cart = () => {
   return (
     <div>
        
-      <h1 className="font-bold text-3xl px-4"> Cart Items - {cartItems.length}</h1>
+      <h1 className="font-bold text-3xl px-4 py-4 bg-slate-200"> Cart Items - {cartItems.length}</h1>
       <button
-        className="bg-green-300 p-2 m-1 rounded-lg px-5"
+        className="bg-green-300 p-2 m-1 rounded-lg "
         onClick={() => handleClearCart()}
       >
         Clear Cart
