@@ -8,7 +8,7 @@
   <br />
   <br />
 
-  <h2 align="center">FODD_HAVEN-  create a website for ordering a food from restaurant.</h2>
+  <h2 align="center">FODD_HAVEN-  Create a website for ordering a food from restaurant.</h2>
 
 Introducing "Food_Haven" 🍔🛍️ - Your ultimate online food destination! 🌮🚀 Order scrumptious meals with ease, just like Swiggy. 🍕📱Browse diverse cuisines, place orders, and relish delightful dishes at your doorstep! 🍱🏠 Savor the flavors in the comfort of your home. 🍽️🏡 #FoodHaven #OrderNow
 
