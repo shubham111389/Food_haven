@@ -3,18 +3,18 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./Components/Header";
-import Body from "./Components/Body";
-import Footer from "./Components/Footer";
-import About from "./Components/About";
-import Error from "./Components/Error";
-import Contact from "./Components/Contact";
-import Login from "./Components/Login";
-import RestaurantMenu from "./Components/RestaurantMenu";
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
+import About from "./components/About";
+import Error from "./components/Error";
+import Contact from "./components/Contact";
+import Login from "./components/Login";
+import RestaurantMenu from "./components/RestaurantMenu";
 //following import is used for the redux
 import { Provider } from "react-redux";
 import store from "./Utils/store";
-import Cart from "./Components/Cart";
+import Cart from "./components/Cart";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // for routing our page import createBrowserRouter and RouterProvider for providing router & Outlet for children component for nested routing
 
