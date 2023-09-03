@@ -14,7 +14,7 @@ import RestaurantMenu from "./Components/RestaurantMenu";
 //following import is used for the redux
 import { Provider } from "react-redux";
 import store from "./Utils/store";
-import Cart from "./components/Cart";
+import Cart from "./Components/Cart";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // for routing our page import createBrowserRouter and RouterProvider for providing router & Outlet for children component for nested routing
 
