@@ -3,7 +3,7 @@ const Footer1 = () => {
     return (
       
       
-      <div className="relative top-16 flex flex-col justify-between border border-black md:flex md:flex-row  py-10 text-white bg-black">
+      <div className="  flex flex-col justify-between border border-black md:flex md:flex-row  py-10 text-white bg-black">
         <div className="flex flex-1 justify-around ">
           <div className="leftFooter1">
             <span className="opacity-50 font-medium">COMPANY</span>
