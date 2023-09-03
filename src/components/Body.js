@@ -49,7 +49,7 @@ const Body = () => {
         <input
           type="text"
           placeholder="Search for a restaurants"
-          className="w-64 text-xs border border-gray-300 focus:border-gray-500 transition-all duration-300 px-2 py-2 outline-none  rounded"
+          className="w-64 text-xs border https://64d88a6f708b80714bd1c35f--wondrous-paletas-e96fa2.netlify.app/ border-gray-300 focus:border-gray-500 transition-all duration-300 px-2 py-2 outline-none  rounded"
           value={searchText}
           onChange={(e)=>{
             setSearchText(e.target.value)
