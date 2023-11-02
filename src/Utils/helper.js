@@ -35,3 +35,25 @@ export const filterDataByPrice = (restaurants, sortBy = 'increasing') => {
    console.log( resFilterDataPrice);
   return resFilterDataPrice;
 };
+
+export const filterAndSortDataByRating = (restaurants) => {
+  const minRating = 3.5; // Minimum rating to filter by
+   //console.log(restaurants[0].info?.avgRating );
+  // Filter restaurants based on the minimum rating
+  const filteredData = restaurants.filter((restaurant) => {
+    const restaurantRating = parseFloat(restaurant?.info?.avgRating );
+    return restaurantRating >= minRating;
+  });
+
+  // Sort the filtered data by rating in high to low order
+  const sortedData = filteredData.slice(); // Create a copy to avoid modifying the original data
+
+  sortedData.sort((a, b) => {
+    const ratingA = parseFloat(a?.info?.avgRating);
+    const ratingB = parseFloat(b?.info?.avgRating);
+    return ratingB - ratingA; // Sort in high to low order
+  });
+  
+  return sortedData;
+};
+

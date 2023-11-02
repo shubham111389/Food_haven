@@ -3,7 +3,7 @@ import { useState } from "react"; /* This is named export */
 import Shimmer from "./Shimmer1"; /* This is default export */
 import { swiggy_api_URL } from "../Utils/contants";
 import { Link } from "react-router-dom";
-import { filterData,filterDataByPrice } from '../Utils/helper' ; // For reusability or readability filterData function is added in Helper.js file of Utils folder
+import { filterData,filterDataByPrice,filterAndSortDataByRating } from '../Utils/helper' ; // For reusability or readability filterData function is added in Helper.js file of Utils folder
 import useResData from "../Hooks/useResData"; // imported custom hook useResData which gives All Restaurant and  Filtered Restaurant data from swigy api
 import useOnline from "../Hooks/useOnline"; // imported custom hook useOnline which checks user is online or not
 import UserOffline from "./UserOffline";
@@ -70,13 +70,27 @@ const Body = () => {
         >
           Search
         </button>
+        <div>
+        <img className="h-7 ml-5 pt-2" alt="illustration" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZiciQLChBD_t0XAXIhTmacmUlMD_YZ7QUpleI-vvydt7JbORW4FB6GKTObRpxG2wliPo&usqp=CAU" loading="lazy" />
+
+        </div>
+
+        <div className="text-sm font-medium shadow-md px-2 py-2 outline-none rounded bg-green-500 hover:bg-green-600 transition-all duration-200 ease-in-out text-white  bg-opacity-90 flex items-center">
+  <span className="">Filtered By</span>
+</div>
+
         <div className=" ">
-          <button className="p-4"
+          <button className=" text-sm font-medium px-4 py-2 outline-none rounded bg-orange-500 hover:bg-orange-600 transition-all duration-200 ease-in-out text-white ml-2 "
+          onClick={()=>{ 
+            const fPData= filterDataByPrice(FilterRes, 'increasing');
+            setFilteredRestaurants(fPData);
+          }}>  Price   </button>
+          <button className=" text-sm font-medium px-4 py-2 outline-none rounded  bg-orange-500 hover:bg-orange-600 transition-all duration-200 ease-in-out text-white ml-3 "
           onClick={()=>{
-            const fiData= filterDataByPrice(FilterRes, 'increasing');
-            setFilteredRestaurants(fiData);
-          }}> Price </button>
-          <button>rate </button>
+            const fRData= filterAndSortDataByRating(FilterRes);
+            setFilteredRestaurants(fRData);
+          }}
+           > Ratings </button>
 
         </div>
         
