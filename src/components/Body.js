@@ -1,12 +1,13 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react"; /* This is named export */
 import Shimmer from "./Shimmer1"; /* This is default export */
-import { swiggy_api_URL } from "../contants";
+import { swiggy_api_URL } from "../Utils/contants";
 import { Link } from "react-router-dom";
-import { filterData } from '../Utils/Helper' ; // For reusability or readability filterData function is added in Helper.js file of Utils folder
+import { filterData,filterDataByPrice } from '../Utils/helper' ; // For reusability or readability filterData function is added in Helper.js file of Utils folder
 import useResData from "../Hooks/useResData"; // imported custom hook useResData which gives All Restaurant and  Filtered Restaurant data from swigy api
 import useOnline from "../Hooks/useOnline"; // imported custom hook useOnline which checks user is online or not
 import UserOffline from "./UserOffline";
+import { faAnkh } from "@fortawesome/free-solid-svg-icons";
 
 // Body Component for body section: It contain all restaurant cards
 const Body = () => {
@@ -20,7 +21,7 @@ const Body = () => {
   if (!isOnline) {
     return <UserOffline />
   }
-
+  
   // use searchData function and set condition if data is empty show error message
   const searchData = (searchText, restaurants) => {
     if (searchText !== "") {
@@ -37,9 +38,11 @@ const Body = () => {
       setFilteredRestaurants(restaurants);
     }
   };
+ 
 
   // if allRestaurants are empty don't render restaurants cards
   if (!allRestaurants) return null;
+  
 
   return (
     <>
@@ -49,7 +52,7 @@ const Body = () => {
         <input
           type="text"
           placeholder="Search for a restaurants"
-          className="w-64 text-xs border https://64d88a6f708b80714bd1c35f--wondrous-paletas-e96fa2.netlify.app/ border-gray-300 focus:border-gray-500 transition-all duration-300 px-2 py-2 outline-none  rounded"
+          className="w-64 text-xs border  border-gray-300 focus:border-gray-500 transition-all duration-300 px-2 py-2 outline-none  rounded"
           value={searchText}
           onChange={(e)=>{
             setSearchText(e.target.value)
@@ -61,13 +64,22 @@ const Body = () => {
         <button className="text-xs font-medium shadow-md px-2 py-2 outline-none  rounded bg-orange-500 hover:bg-orange-600 transition-all duration-200 ease-in-out text-white"
         onClick={()=>{
            const fData = filterData(searchText,allRestaurants)
-           console.log(fData)
            setFilteredRestaurants(fData);
            (fData)
         }}
         >
           Search
         </button>
+        <div className=" ">
+          <button className="p-4"
+          onClick={()=>{
+            const fiData= filterDataByPrice(FilterRes, 'increasing');
+            setFilteredRestaurants(fiData);
+          }}> Price </button>
+          <button>rate </button>
+
+        </div>
+        
       </div>
         <div className="flex gap-12 cursor-pointer text-xs">
             <div className="flex gap-4 items-center">
@@ -85,6 +97,8 @@ const Body = () => {
         </div>
         </div>
       {errorMessage && <div className="error-container">{errorMessage}</div>}
+      {console.log(FilterRes[0]?.info?.costForTwo
+)};
 
       {/* if restaurants data are fetched then display restaurants cards otherwise display Shimmer UI */}
       {allRestaurants?.length === 0 && FilterRes?.length === 0 ? (

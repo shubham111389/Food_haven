@@ -1,4 +1,4 @@
-import { IMG_CDN_URL } from "../contants";
+import { IMG_CDN_URL } from "../Utils/contants";
 
 // Restaurant card component: Image, name, cuisine
 const RestaurantCard = ({
