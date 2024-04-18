@@ -111,10 +111,7 @@ const Body = () => {
         </div>
         </div>
       {errorMessage && <div className="error-container">{errorMessage}</div>}
-      {console.log(FilterRes[0]?.info?.costForTwo
-)};
-
-      {/* if restaurants data are fetched then display restaurants cards otherwise display Shimmer UI */}
+     {/* if restaurants data are fetched then display restaurants cards otherwise display Shimmer UI */}
       {allRestaurants?.length === 0 && FilterRes?.length === 0 ? (
         <Shimmer />
       ) : (

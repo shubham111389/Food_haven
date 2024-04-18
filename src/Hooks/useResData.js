@@ -15,6 +15,7 @@ const useResData = (API_URL) => {
     try {
       const response = await fetch(API_URL);
       // if response is not ok then throw new Error
+      console.log( response);
       if (!response.ok) {
         const err = response.status;
         throw new Error(err);
